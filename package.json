@@ -1,0 +1,45 @@
+{
+  "name": "generator-assembly-line",
+  "version": "1.0.0-dev.1",
+  "description": "A Yeoman generator for npm libraries compiled by Babel and packaged for the browser with Webpack",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecliptic/assembly-line.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "react",
+    "redux",
+    "immutable",
+    "universal"
+  ],
+  "author": "Brandon Konkle <brandon@konkle.us>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecliptic/assembly-line/issues"
+  },
+  "homepage": "https://github.com/ecliptic/assembly-line#readme",
+  "files": [
+    "app"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.22.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-export-extensions": "^6.3.13",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-preset-es2015-loose": "^6.1.4",
+    "babel-register": "^6.3.13",
+    "chalk": "^1.1.1",
+    "eslint": "^1.10.3",
+    "eslint-config-ecliptic": "^1.5.0",
+    "eslint-plugin-react": "^3.12.0"
+  }
+}
