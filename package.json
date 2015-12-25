@@ -3,7 +3,11 @@
   "version": "1.0.0-dev.1",
   "description": "A Yeoman generator for npm libraries compiled by Babel and packaged for the browser with Webpack",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul test _mocha -- --require babel-register test/**/*.{js,jsx}",
+    "build": "rsync -az src/ generators/ && babel src -s -d generators",
+    "prewatch": "npm run build",
+    "watch": "chokidar src/**/* -c 'npm run build'",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,7 +27,7 @@
   },
   "homepage": "https://github.com/ecliptic/assembly-line#readme",
   "files": [
-    "app"
+    "generators/app"
   ],
   "dependencies": {
     "yeoman-generator": "^0.22.1"
@@ -31,6 +35,7 @@
   "devDependencies": {
     "babel-cli": "^6.3.17",
     "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.0",
     "babel-plugin-add-module-exports": "^0.1.2",
     "babel-plugin-transform-class-properties": "^6.3.13",
     "babel-plugin-transform-export-extensions": "^6.3.13",
@@ -38,6 +43,7 @@
     "babel-preset-es2015-loose": "^6.1.4",
     "babel-register": "^6.3.13",
     "chalk": "^1.1.1",
+    "chokidar-cli": "^1.2.0",
     "eslint": "^1.10.3",
     "eslint-config-ecliptic": "^1.5.0",
     "eslint-plugin-react": "^3.12.0"
