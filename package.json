@@ -4,7 +4,7 @@
   "description": "A Yeoman generator for npm libraries compiled by Babel and packaged for the browser with Webpack",
   "scripts": {
     "test": "istanbul test _mocha -- --require babel-register test/**/*.{js,jsx}",
-    "build": "rsync -az src/ generators/ && babel src -s -d generators",
+    "build": "rsync --delete -az src/ generators/ && babel src -s -d generators",
     "prewatch": "npm run build",
     "watch": "chokidar src/**/* -c 'npm run build'",
     "prepublish": "npm run build"
@@ -30,6 +30,7 @@
     "generators/app"
   ],
   "dependencies": {
+    "chalk": "^1.1.1",
     "yeoman-generator": "^0.22.1"
   },
   "devDependencies": {
@@ -46,6 +47,7 @@
     "chokidar-cli": "^1.2.0",
     "eslint": "^1.10.3",
     "eslint-config-ecliptic": "^1.5.0",
-    "eslint-plugin-react": "^3.12.0"
+    "eslint-plugin-react": "^3.12.0",
+    "mkdirp": "^0.5.1"
   }
 }

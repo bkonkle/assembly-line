@@ -1,26 +1,25 @@
 {
   "name": "<%= name %>",
   "version": "<%= version %>",
-  "description": "<%= description %>",
+  "description": "<%- description %>",
   "main": "lib/index.js",
   "scripts": {
     "test": "istanbul test _mocha -- --require babel-register test/**/*.{js,jsx}",
     "build": "babel src -s -d lib",
     "watch": "babel src -s -d lib -w",
-    "bundle": "babel-node $(which webpack) --display-modules",
-    "prepublish": "npm run build && npm run bundle"
+    "bundle": "babel-node $(which webpack) --display-modules"
   },
   "repository": {
     "type": "<%= repoType %>",
-    "url": "<%= repoUrl %>",
+    "url": "<%= repoUrl %>"
   },
-  "author": "<%= author %>",
+  "author": "<%- author %>",
   "license": "MIT",
   "keywords": [<% keywords.forEach((keyword, i) => { %>
     "<%= keyword %>"<% if (i !== keywords.length - 1) { %>,<% } %>
   <% }) %>],<% if (react) { %>
   "peerDependencies": {
-    "react": ">=0.14.0",
+    "react": ">=0.14.0"
   },<% } %>
   "dependencies": {},
   "devDependencies": {

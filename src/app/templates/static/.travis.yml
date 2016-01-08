@@ -1,6 +1,6 @@
 language: node_js
 node_js: 5
-install: npm install react redux && npm install
+install: npm install react && npm install
 script:
  - npm test
 before_cache: npm prune
