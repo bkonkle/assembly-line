@@ -40,7 +40,7 @@ var AssemblyLine = (function (_Base) {
 
     var done = this.async();
 
-    this.log(_chalk2.default.blue('\n      ___                         _     _         _     _\n     / _ \\                       | |   | |       | |   (_)\n    / /_\\ \\___ ___  ___ _ __ ___ | |__ | |_   _  | |    _ _ __   ___\n    |  _  / __/ __|/ _ \\ \'_ ` _ \\| \'_ \\| | | | | | |   | | \'_ \\ / _ \\\n    | | | \\__ \\__ \\  __/ | | | | | |_) | | |_| | | |___| | | | |  __/\n    \\_| |_/___/___/\\___|_| |_| |_|_.__/|_|\\__, | \\_____/_|_| |_|\\___|\n                                           __/ |\n                                          |___/\n    '));
+    this.log(_chalk2.default.blue('\n    ___                         _     _         _     _\n   / _ \\                       | |   | |       | |   (_)\n  / /_\\ \\___ ___  ___ _ __ ___ | |__ | |_   _  | |    _ _ __   ___\n  |  _  / __/ __|/ _ \\ \'_ ` _ \\| \'_ \\| | | | | | |   | | \'_ \\ / _ \\\n  | | | \\__ \\__ \\  __/ | | | | | |_) | | |_| | | |___| | | | |  __/\n  \\_| |_/___/___/\\___|_| |_| |_|_.__/|_|\\__, | \\_____/_|_| |_|\\___|\n                                         __/ |\n                                        |___/\n    '));
 
     (0, _child_process.exec)('git config --get remote.origin.url', function (err, stdout) {
       if (stdout.toString()) {
@@ -118,6 +118,10 @@ var AssemblyLine = (function (_Base) {
     _mkdirp2.default.sync(this.destinationPath('lib'));
     _mkdirp2.default.sync(this.destinationPath('dist'));
     _mkdirp2.default.sync(this.destinationPath('test'));
+  };
+
+  AssemblyLine.prototype.install = function install() {
+    this.npmInstall();
   };
 
   return AssemblyLine;

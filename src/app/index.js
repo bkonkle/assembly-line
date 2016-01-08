@@ -10,14 +10,14 @@ export default class AssemblyLine extends Base {
     const done = this.async()
 
     this.log(chalk.blue(`
-      ___                         _     _         _     _
-     / _ \\                       | |   | |       | |   (_)
-    / /_\\ \\___ ___  ___ _ __ ___ | |__ | |_   _  | |    _ _ __   ___
-    |  _  / __/ __|/ _ \\ '_ \` _ \\| '_ \\| | | | | | |   | | '_ \\ / _ \\
-    | | | \\__ \\__ \\  __/ | | | | | |_) | | |_| | | |___| | | | |  __/
-    \\_| |_/___/___/\\___|_| |_| |_|_.__/|_|\\__, | \\_____/_|_| |_|\\___|
-                                           __/ |
-                                          |___/
+    ___                         _     _         _     _
+   / _ \\                       | |   | |       | |   (_)
+  / /_\\ \\___ ___  ___ _ __ ___ | |__ | |_   _  | |    _ _ __   ___
+  |  _  / __/ __|/ _ \\ '_ \` _ \\| '_ \\| | | | | | |   | | '_ \\ / _ \\
+  | | | \\__ \\__ \\  __/ | | | | | |_) | | |_| | | |___| | | | |  __/
+  \\_| |_/___/___/\\___|_| |_| |_|_.__/|_|\\__, | \\_____/_|_| |_|\\___|
+                                         __/ |
+                                        |___/
     `))
 
     exec('git config --get remote.origin.url', (err, stdout) => {
@@ -90,6 +90,10 @@ export default class AssemblyLine extends Base {
     mkdirp.sync(this.destinationPath('lib'))
     mkdirp.sync(this.destinationPath('dist'))
     mkdirp.sync(this.destinationPath('test'))
+  }
+
+  install() {
+    this.npmInstall()
   }
 
 }
