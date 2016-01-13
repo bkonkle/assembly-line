@@ -107,10 +107,10 @@ var AssemblyLine = (function (_Base) {
   };
 
   AssemblyLine.prototype.configuring = function configuring() {
-    this.fs.copyTpl(this.templatePath('*'), this.destinationRoot(), this.config.getAll());
-    this.fs.copyTpl(this.templatePath('.*'), this.destinationRoot(), this.config.getAll());
-    this.fs.copy(this.templatePath('static/*'), this.destinationRoot());
-    this.fs.copy(this.templatePath('static/.*'), this.destinationRoot());
+    this.fs.copyTpl(this.templatePath('**/*'), this.destinationRoot(), this.config.getAll());
+    this.fs.copyTpl(this.templatePath('**/.*'), this.destinationRoot(), this.config.getAll());
+    this.fs.copy(this.templatePath('../static/**/*'), this.destinationRoot());
+    this.fs.copy(this.templatePath('../static/**/.*'), this.destinationRoot());
   };
 
   AssemblyLine.prototype.writing = function writing() {
@@ -129,4 +129,5 @@ var AssemblyLine = (function (_Base) {
 
 exports.default = AssemblyLine;
 module.exports = exports['default'];
+
 //# sourceMappingURL=index.js.map

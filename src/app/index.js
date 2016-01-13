@@ -79,10 +79,10 @@ export default class AssemblyLine extends Base {
   }
 
   configuring() {
-    this.fs.copyTpl(this.templatePath('*'), this.destinationRoot(), this.config.getAll())
-    this.fs.copyTpl(this.templatePath('.*'), this.destinationRoot(), this.config.getAll())
-    this.fs.copy(this.templatePath('static/*'), this.destinationRoot())
-    this.fs.copy(this.templatePath('static/.*'), this.destinationRoot())
+    this.fs.copyTpl(this.templatePath('**/*'), this.destinationRoot(), this.config.getAll())
+    this.fs.copyTpl(this.templatePath('**/.*'), this.destinationRoot(), this.config.getAll())
+    this.fs.copy(this.templatePath('../static/**/*'), this.destinationRoot())
+    this.fs.copy(this.templatePath('../static/**/.*'), this.destinationRoot())
   }
 
   writing() {
