@@ -1,6 +1,6 @@
 {
   "name": "generator-assembly-line",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Yeoman generator for npm libraries compiled by Babel and packaged for the browser with Webpack",
   "scripts": {
     "test": "istanbul test _mocha -- --require babel-register test/**/*.{js,jsx}",
