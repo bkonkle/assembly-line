@@ -93,7 +93,7 @@ export default class AssemblyLine extends Base {
   }
 
   install() {
-    // this.npmInstall()
+    this.npmInstall()
   }
 
 }
