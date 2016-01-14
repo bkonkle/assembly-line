@@ -4,7 +4,7 @@
   "description": "<%- description %>",
   "main": "lib/index.js",
   "scripts": {
-    "test": "istanbul test _mocha -- --require babel-register test/**/*.{js,jsx}",
+    "test": "istanbul test _mocha -- --require test/setup test/**/*.{js,jsx}",
     "build": "babel src -s -d lib",
     "watch": "babel src -s -d lib -w",
     "bundle": "babel-node $(which webpack) --display-modules"
@@ -16,8 +16,8 @@
   "author": "<%- author %>",
   "license": "MIT",
   "keywords": [<% keywords.forEach((keyword, i) => { %>
-    "<%= keyword %>"<% if (i !== keywords.length - 1) { %>,<% } %>
-  <% }) %>],<% if (react) { %>
+    "<%= keyword %>"<% if (i !== keywords.length - 1) { %>,<% } %><% }) %>
+  ],<% if (react) { %>
   "peerDependencies": {
     "react": ">=0.14.0"
   },<% } %>

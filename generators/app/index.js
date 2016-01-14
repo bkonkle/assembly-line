@@ -121,7 +121,7 @@ var AssemblyLine = (function (_Base) {
   };
 
   AssemblyLine.prototype.install = function install() {
-    this.npmInstall();
+    // this.npmInstall()
   };
 
   return AssemblyLine;
