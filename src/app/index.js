@@ -70,7 +70,7 @@ export default class AssemblyLine extends Base {
     }, {
       type: 'confirm',
       name: 'react',
-      message: 'Will the project use React?',
+      message: 'Will the project use React:',
       default: true,
     }], answers => {
       this.config.set(answers)
@@ -93,6 +93,9 @@ export default class AssemblyLine extends Base {
   }
 
   install() {
+    if (this.config.get('react')) {
+      this.npmInstall('react')
+    }
     this.npmInstall()
   }
 

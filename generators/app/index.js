@@ -98,7 +98,7 @@ var AssemblyLine = (function (_Base) {
     }, {
       type: 'confirm',
       name: 'react',
-      message: 'Will the project use React?',
+      message: 'Will the project use React:',
       default: true
     }], function (answers) {
       _this3.config.set(answers);
@@ -121,6 +121,9 @@ var AssemblyLine = (function (_Base) {
   };
 
   AssemblyLine.prototype.install = function install() {
+    if (this.config.get('react')) {
+      this.npmInstall('react');
+    }
     this.npmInstall();
   };
 
