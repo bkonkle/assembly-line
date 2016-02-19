@@ -4,7 +4,7 @@
   "description": "<%- description %>",
   "main": "lib/index.js",
   "scripts": {
-    "test": "istanbul test _mocha -- --require test/setup test/**/*.{js,jsx}",
+    "test": "istanbul test _mocha -- --require utils/test-setup test/**/*.{js,jsx}",
     "build": "babel src -s -d lib",
     "watch": "babel src -s -d lib -w",
     "bundle": "babel-node $(which webpack) --display-modules"

@@ -16,8 +16,14 @@ Then, switch to your new project directory and run the generator:
 
 Answer the questions, and enjoy your new project!
 
+## Develop
+
+Install GNU Parallel for the build tooling in npm scripts:
+
+    $ brew install parallel
+
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Brandon Konkle
+Copyright (c) 2016 Brandon Konkle
